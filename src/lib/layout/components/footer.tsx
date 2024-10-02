@@ -11,8 +11,8 @@ export const Footer = () => {
     >
       <Text fontSize="xs">
         {new Date().getFullYear()} -{' '}
-        <Link href="https://sznm.dev" isExternal>
-          sznm.dev
+        <Link href="https://github.com/hydrogrow-team/" isExternal>
+          HydroGrow
         </Link>
       </Text>
     </Flex>

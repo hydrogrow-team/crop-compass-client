@@ -5,6 +5,7 @@ import {
   Heading,
   Image,
   Link,
+  Stack,
   Text,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
@@ -25,10 +26,10 @@ const Page404 = () => {
         </Link>
       </Box>
 
-      <Box>
+      <Stack spacing={4}>
         <Text>It&apos;s Okay!</Text>
         <Button onClick={handleBackToHome}>Let&apos;s Head Back</Button>
-      </Box>
+      </Stack>
     </Grid>
   );
 };
