@@ -1,10 +1,10 @@
-import { Text } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
 
 
 
 const Home = () => {
   return (
-    <Text>Dashboard Page</Text>
+    <Heading size="md">Home Page</Heading>
   );
 };
 
