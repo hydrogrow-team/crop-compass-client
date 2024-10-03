@@ -1,4 +1,4 @@
-import { Heading, Stack, Text } from '@chakra-ui/react';
+import { Heading, Stack } from '@chakra-ui/react';
 import { Chart, weatherFakeData } from '~/lib/layout/components/chart';
 
 

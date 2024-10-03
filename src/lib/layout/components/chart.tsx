@@ -1,4 +1,6 @@
-import { ResponsiveLine, type Serie } from '@nivo/line'
+import { useColorMode } from '@chakra-ui/react';
+import type { Theme } from "@nivo/core"
+import { ResponsiveLine, type Serie, } from '@nivo/line'
 import type { ReactNode } from 'react';
 
 
@@ -12,7 +14,48 @@ export const Chart = ({
     disableAnimate,
 }: { data: Array<Serie>, axisBottomRotation: number, BottomLegend?: ReactNode, LeftLegend?: ReactNode, disableAxisBottom: boolean, disableAnimate: boolean }) => {
 
+    const { colorMode } = useColorMode();
+    const isDarkMode = colorMode === "dark";
 
+    const theme: Theme = {
+        axis: {
+            ticks: {
+                text: {
+                    fill: isDarkMode ? '#ffffff' : '#000000',
+                },
+            },
+            domain: {
+                line: {
+                    stroke: isDarkMode ? '#ffffff' : '#000000', // Axis line color
+                },
+            },
+            legend: {
+                text: {
+                    fill: isDarkMode ? '#ffffff' : '#000000',
+                },
+            },
+        },
+        tooltip: {
+            container: {
+                color: isDarkMode ? '#333333' : '#ffffff',
+                text: {
+                    fill: isDarkMode ? '#ffffff' : '#000000',
+                },
+            },
+        },
+        grid: {
+            line: {
+                stroke: isDarkMode ? '#fff' : '#dddddd',
+                strokeWidth: 0.5,
+            },
+        },
+        legends: {
+            text: {
+                fill: isDarkMode ? '#ffffff' : '#000000',
+            }
+        }
+    };
+    
     return (
         <ResponsiveLine
             data={data}
@@ -27,7 +70,7 @@ export const Chart = ({
                 reverse: false
             }}
             yFormat=' >-.2f'
-
+            theme={theme}
             axisBottom={
                 disableAxisBottom
                     ? false
