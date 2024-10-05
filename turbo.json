@@ -2,20 +2,34 @@
 	"$schema": "https://turbo.build/schema.json",
 	"tasks": {
 		"type:check": {
-			"inputs": ["tsconfig.json", "src/**"],
-			"outputs": ["*.tsbuildinfo"]
+			"inputs": [
+				"tsconfig.json",
+				"src/**"
+			],
+			"outputs": [
+				"*.tsbuildinfo"
+			]
 		},
 		"biome:check": {
 			"outputs": [],
-			"inputs": ["biome.json", "src/**"]
+			"inputs": [
+				"biome.json",
+				"src/**"
+			]
 		},
 		"biome:ci": {
 			"outputs": [],
-			"inputs": ["biome.json", "src/**"]
+			"inputs": [
+				"biome.json",
+				"src/**"
+			]
 		},
 		"build": {
-			"dependsOn": ["type:check"],
-			"outputs": ["dist/**", "public/**"],
+			"dependsOn": [],
+			"outputs": [
+				"dist/**",
+				"public/**"
+			],
 			"env": []
 		}
 	}

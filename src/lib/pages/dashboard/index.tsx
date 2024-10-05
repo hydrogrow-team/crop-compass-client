@@ -22,7 +22,7 @@ import { Chart, rainfallFakeData } from '~/lib/layout/components/chart';
 const markdown =
   '## Reasons to Plant Moth Beans as an Agribusiness:\n\nMoth beans (Vigna aconitifolia) offer a compelling case for agribusiness ventures due to their unique characteristics and growing demand:\n\n**Market Demand:**\n\n **High Protein Content:** Moth beans are a rich source of protein, making them a valuable alternative to conventional protein sources like soybeans. \n**Dietary Fiber:** They are also high in dietary fiber, which is essential for digestive health.\n**Nutritional Value:**  Moth beans are a good source of various vitamins, minerals, and antioxidants, appealing to health-conscious consumers.\n* *Gluten-Free Option:* As a legume, moth beans are naturally gluten-free, making them attractive for people with gluten intolerance or celiac disease.\n* *Rising Popularity:*  Demand for moth beans is increasing due to their health benefits and versatility in cooking, especially in vegetarian and vegan diets.\n\n*Agronomic Advantages:\n\n *Drought Tolerance:*  Moth beans can withstand drought conditions, making them suitable for regions with limited water resources.\n* *Nitrogen Fixation:*  They are legumes, meaning they can fix nitrogen from the air, reducing the need for nitrogen fertilizers and improving soil health.\n* *Pest Resistance:*  Moth beans are relatively resistant to common pests and diseases, minimizing the need for chemical treatments.\n* *Short Growing Season:*  They have a relatively short growing season, allowing for multiple crops per year and faster returns on investment.\n* *Low Input Requirements:*  Moth beans are generally low-maintenance, requiring minimal inputs for water and fertilizers.\n\n*Additional Benefits:\n\n *Market Differentiation:*  Moth beans offer a niche market opportunity compared to more common legumes like soybeans.\n* *Sustainable Practices:*  Their drought tolerance, nitrogen fixation, and pest resistance contribute to sustainable agricultural practices.\n* *Export Potential:*  Moth beans have a growing demand in international markets, offering potential for export earnings.\n\n*Challenges:\n\n *Limited Processing Infrastructure:*  Existing processing infrastructure for moth beans may be limited, requiring investments in processing and storage facilities.\n* *Awareness and Market Development:*  Raising awareness about moth beans and developing market channels may require effort.\n\n*Overall, moth beans present an exciting opportunity for agribusinesses looking to capitalize on growing demand for healthy and sustainable food options. Their drought tolerance, nutritional value, and market potential make them a promising crop for the future.* \n';
 
-const API = 'https://crop-compass-api.onrender.com/api/v1/land';
+const API = 'https://crop-compass-server.fly.dev/api/v1/land';
 
 interface SoilData {
   mean: number;
@@ -175,6 +175,7 @@ const Dashboard = () => {
         );
         setSoilProps(res.data.data);
       } catch (_error) {
+        console.error(_error)
       } finally {
         setIsSoilLoading(false);
       }
