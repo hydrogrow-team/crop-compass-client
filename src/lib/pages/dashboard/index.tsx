@@ -390,9 +390,9 @@ const Dashboard = () => {
                     <Spinner size="xl" colorScheme="green" />
                 ) : (
                     <>
-                        <HStack w="full">
+                        <HStack w="full" justify={"space-between"} align={"center"} >
                             <Heading size="lg">Recommended:</Heading>
-                            <Tag colorScheme="green" size="lg">
+                            <Tag colorScheme="green" size="lg" fontSize={"50px"} textTransform={"uppercase"}>
                                 {pred?.prediction}
                             </Tag>
                         </HStack>
