@@ -9,6 +9,7 @@ import {
     Spinner,
     Stack,
     Tag,
+    Image
 } from '@chakra-ui/react';
 import { Link as ChakraLink } from '@chakra-ui/react';
 import { Icon } from '@iconify/react';
@@ -66,6 +67,7 @@ const Dashboard = () => {
     const [isWeatherLoading, setIsWeatherLoading] = useState<boolean>(false);
     const [_isSoilLoading, setIsSoilLoading] = useState<boolean>(false);
     const [isPredsLoading, setIsPredsLoading] = useState<boolean>(false);
+    const [imagePred, setImagePred] = useState(null)
 
     useEffect(() => {
         const loc = localStorage.getItem('location');
@@ -184,7 +186,16 @@ const Dashboard = () => {
                 setIsPredsLoading(true);
                 const res = await axios.get(`${API}/prediction?lat=${latitude}&lon=${longitude}`, { timeout: 20000 });
                 setPred(res.data.data);
+
                 console.log('preds:', res.data.data);
+                if (pred?.prediction === "mothbeans") {
+                    setImagePred("https://plus.unsplash.com/premium_photo-1664527307810-63c15cb57346?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+                } else {
+
+                    const imageRes = await axios.get(`https://api.unsplash.com/photos/random?query=${pred?.prediction}&w=750&h=1000&client_id=BMQiAlH2twztXM_Hx5udZ2XoRSBBivVTT-574LlIzoE`);
+                    setImagePred(imageRes?.data?.urls?.regular);
+                }
+
             } catch (error) {
                 console.error('Failed to fetch soil data:', error);
             } finally {
@@ -396,11 +407,15 @@ const Dashboard = () => {
                                 {pred?.prediction}
                             </Tag>
                         </HStack>
-                        <Stack w="full">
-                            <ReactMarkdown components={ChakraUIRenderer()} skipHtml>
-                                {pred?.description}
-                            </ReactMarkdown>
-                        </Stack>
+                        <HStack>
+
+                            <Stack w="full">
+                                <ReactMarkdown components={ChakraUIRenderer()} skipHtml>
+                                    {pred?.description}
+                                </ReactMarkdown>
+                            </Stack>
+                            <Image maxW="500px" src={imagePred} />
+                        </HStack>
                     </>
                 )}
             </Stack>
