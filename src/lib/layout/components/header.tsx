@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 
-import { ThemeToggle } from './theme-toggle';
 import { Logo } from './logo';
+import { ThemeToggle } from './theme-toggle';
 
 export const Header = () => {
   return (

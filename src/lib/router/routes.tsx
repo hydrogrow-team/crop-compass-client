@@ -8,22 +8,22 @@ const SignUp = React.lazy(() => import('~/lib/pages/auth/signup'));
 
 export const routes: Array<PathRouteProps> = [
   {
-    path: "/",
-    element: <Home />
+    path: '/',
+    element: <Home />,
   },
   {
-    path: "/auth/login",
-    element: <Login />
+    path: '/auth/login',
+    element: <Login />,
   },
   {
-    path: "/auth/signup",
-    element: <SignUp />
-  }
+    path: '/auth/signup',
+    element: <SignUp />,
+  },
 ];
 
 export const privateRoutes: Array<PathRouteProps> = [
   {
-    path: "/dashboard",
-    element: <Dashboard />
-  }
+    path: '/dashboard',
+    element: <Dashboard />,
+  },
 ];

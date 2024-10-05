@@ -16,7 +16,11 @@ export const Meta = () => {
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="theme-color" content="#FFFFFF" />
 
-      <link rel="icon" type="image/webp"  href="/assets/crop-compass-logo.webp" />
+      <link
+        rel="icon"
+        type="image/webp"
+        href="/assets/crop-compass-logo.webp"
+      />
     </Helmet>
   );
 };
