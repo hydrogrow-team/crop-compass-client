@@ -153,7 +153,7 @@ const SignUp = () => {
         dispatch({ type: 'SET_LOCATION_LONGITUDE', payload: longitude });
         dispatch({ type: 'SET_LOCATION_LATITUDE', payload: latitude });
       },
-      (_err) => {},
+      (_err) => { },
     );
   }, []);
 
@@ -243,7 +243,7 @@ const SignUp = () => {
       are_inputs_valid: () => {
         const { longitude, latitude } = state.location;
 
-        const isValidNumber = (value, field: string) => {
+        const isValidNumber = (value: number | undefined, field: string) => {
           if (typeof value === 'undefined' || typeof value !== 'number') {
             setErrors({
               ...errors,
