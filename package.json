@@ -24,7 +24,11 @@
     "push-release": "git push --follow-tags origin main"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/checkbox": "^2.3.2",
+    "@chakra-ui/image": "^2.1.0",
+    "@chakra-ui/layout": "^2.3.1",
+    "@chakra-ui/react": "^2.10.1",
+    "@chakra-ui/table": "^2.1.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/plus-jakarta-sans": "^5.1.0",
@@ -33,7 +37,7 @@
     "@nivo/line": "^0.87.0",
     "axios": "^1.7.7",
     "chakra-ui-markdown-renderer": "^4.1.0",
-    "framer-motion": "^11.5.4",
+    "framer-motion": "^11.11.1",
     "million": "3.1.11",
     "nivo": "^0.31.0",
     "react": "^18.3.1",
