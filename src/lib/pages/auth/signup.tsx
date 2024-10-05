@@ -153,7 +153,7 @@ const SignUp = () => {
         dispatch({ type: 'SET_LOCATION_LONGITUDE', payload: longitude });
         dispatch({ type: 'SET_LOCATION_LATITUDE', payload: latitude });
       },
-      (_err) => { },
+      (_err) => {},
     );
   }, []);
 
