@@ -21,7 +21,7 @@
     "up-interactive": "pnpm up -i",
     "up-latest": "pnpm up-interactive -L",
     "release": "cross-env commit-and-tag-version",
-    "push-release": "git push --follow-tags origin main",
+    "push-release": "git push --follow-tags origin main"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
