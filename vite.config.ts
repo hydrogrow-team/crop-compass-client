@@ -36,10 +36,7 @@ export default defineConfig({
   plugins: [
     million.vite({ auto: true }),
     react(),
-    checker({
-      typescript: true,
-      biome: true,
-    }),
+    checker({}),
     tsconfigPaths(),
     visualizer({ template: 'sunburst' }) as unknown as PluginOption,
     VitePWA(pwaOptions),
