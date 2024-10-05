@@ -1,5 +1,5 @@
 {
-  "name": "vite-react-chakra-starter",
+  "name": "crop-compass",
   "version": "0.1.0",
   "private": true,
   "author": "sozonome",
@@ -20,17 +20,19 @@
     "knip": "knip",
     "up-interactive": "pnpm up -i",
     "up-latest": "pnpm up-interactive -L",
-    "release": "cross-env HUSKY=0 commit-and-tag-version",
+    "release": "cross-env commit-and-tag-version",
     "push-release": "git push --follow-tags origin main",
-    "prepare": "husky"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fontsource-variable/plus-jakarta-sans": "^5.1.0",
+    "@iconify/react": "^5.0.2",
     "@nivo/core": "^0.87.0",
     "@nivo/line": "^0.87.0",
+    "axios": "^1.7.7",
+    "chakra-ui-markdown-renderer": "^4.1.0",
     "framer-motion": "^11.5.4",
     "million": "3.1.11",
     "nivo": "^0.31.0",
@@ -38,6 +40,7 @@
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^5.3.0",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
